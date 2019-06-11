@@ -11,8 +11,9 @@
     <!-- <ul v-html="stations"> -->
       <li v-for="(station, index) in stations" :key="`station-${index}`">
         <strong>{{station.name}}</strong>
-        <span>{{station.city}}</span>
+        <!-- <span>{{station.city}}</span> -->
         <!-- <span>{{station.province}}</span> -->
+        <span>{{station.country}}</span>
       </li>
     <!-- </ul> -->
     <div class="error" v-html="error"></div>
