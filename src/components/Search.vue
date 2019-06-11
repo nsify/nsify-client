@@ -12,7 +12,7 @@
       <li v-for="(station, index) in stations" :key="`station-${index}`">
         <strong>{{station.name}}</strong>
         <span>{{station.city}}</span>
-        <span>{{station.province}}</span>
+        <!-- <span>{{station.province}}</span> -->
       </li>
     <!-- </ul> -->
     <div class="error" v-html="error"></div>
@@ -39,10 +39,7 @@ export default {
       // the user is still typing
       clearTimeout(searchTimeout)
       searchTimeout = setTimeout(async () => {
-        let tmp = await searchStation(value)
-        console.log(tmp)
-        this.stations = tmp
-        // this.error = tmp.stations.Tiel
+        this.stations = await searchStation(value)
       }, 250)
     }
   },
